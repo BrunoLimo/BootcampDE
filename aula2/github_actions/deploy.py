@@ -22,11 +22,11 @@ def create_stack(stack_name,template_body, **kwargs): #criando o stack no cloudf
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
     logging.info(f'CREATE COMPLETE')
 
-def update_stack(stack_name, template_body, **kwargs): #fazendo o update do stack, em caso de erro sinalizar
+def update_stack(stack_name, template_body, **kwargs):
     try:
         cloudformation_client.update_stack(
             StackName=stack_name,
-            Capabilities=['CAPALIBITIES_IAM','CAPABILITIES_NAMED_IAM'],
+            Capabilities=['CAPABILITY_IAM', 'CAPABILITY_NAMED_IAM'],
             TemplateBody=template_body
         )
     
