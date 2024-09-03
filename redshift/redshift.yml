@@ -1,6 +1,6 @@
 Resources:
 
-  Redshiftbrunolimo125:
+  RedshiftBL125:
     Type: AWS::Redshift::Cluster
     Properties:
       AllowVersionUpgrade: true
@@ -14,8 +14,8 @@ Resources:
       ClusterType: single-node
       DBName: production
       Encrypted: true
-      MasterUsername: admin
-      MasterUserPassword: Admin1234
+      MasterUsername: brunolimo125
+      MasterUserPassword: 31092885
       NodeType: dc2.large
       NumberOfNodes: 1
       PubliclyAccessible: true
