@@ -6,7 +6,7 @@ Resources:
   Brunolimo125: ### Nome do criador do bucket que pode ser chamado como referência depois
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: bucket-github-actions
+      BucketName: bucketcomnomeunico125
       BucketEncryption: ### Criptografia pra o bucket, com SSEAlgorithm padrão da aws
         ServerSideEncryptionConfiguration: 
           - ServerSideEncryptionByDefault: 
