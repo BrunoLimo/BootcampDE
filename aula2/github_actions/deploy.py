@@ -43,12 +43,13 @@ def update_stack(stack_name, template_body, **kwargs): #fazendo o update do stac
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
     logging.info(f'UPDATE COMPLETE')
 
-def get_existing_stacks(): #pegando os stacks ja existentes no cloudformation
+def get_existing_stacks():
     response = cloudformation_client.list_stacks(
-        StackStatusFilter=['CREATE_COMPLETE','UPDATE_COMPLETE','UPDATE_ROLLBACK_COMPLETE']
+        StackStatusFilter=['CREATE_COMPLETE', 'UPDATE_COMPLETE', 'UPDATE_ROLLBACK_COMPLETE']
     )
 
     return [stack['StackName'] for stack in response['StackSummaries']]
+
 
 def _get_abs_path(path):
     return os.path.join(os.path.dirname(os.path.realpath(__file__)), path)
