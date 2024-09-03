@@ -19,7 +19,7 @@ def create_stack(stack_name,template_body, **kwargs): #criando o stack no cloudf
         StackName=stack_name,
         WaiterConfig={'delay':5,'MaxAttempts':600}
     )
-    cloudformation_client.get_waiter('stack_exists').wait(Stackname=stack_name)
+    cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
     logging.info(f'CREATE COMPLETE')
 
 def update_stack(stack_name, template_body, **kwargs): #fazendo o update do stack, em caso de erro sinalizar
