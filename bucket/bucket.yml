@@ -1,0 +1,18 @@
+Description: Criação de bucket no S3
+#For more information about properties, access the documentation: 
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html
+Resources:
+
+  Brunolimo125: ### Nome do criador do bucket que pode ser chamado como referência depois
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: brunolimo126
+      BucketEncryption: ### Criptografia pra o bucket, com SSEAlgorithm padrão da aws
+        ServerSideEncryptionConfiguration: 
+          - ServerSideEncryptionByDefault: 
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration: ### Propriedade para permitir (ou não) acesso público 
+          BlockPublicAcls: True
+          BlockPublicPolicy: True
+          IgnorePublicAcls: True
+          RestrictPublicBuckets: True
