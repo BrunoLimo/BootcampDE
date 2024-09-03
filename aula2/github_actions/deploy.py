@@ -55,7 +55,7 @@ def _get_abs_path(path):
 
 def create_or_update_stack():
     stack_name = 's3-bucket-ci'
-    with open(_get_abs_path('bucket_githubaction.yml')) as f:
+    with open(_get_abs_path('bucket_githubactions.yml')) as f:
         template_body = f.read()
 
     existing_stack = get_existing_stacks()
