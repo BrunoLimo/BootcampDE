@@ -65,7 +65,7 @@ def create_or_update_stack():
         logging.info(f'UPDATE STACK {stack_name}')
         update_stack(stack_name,template_body)
     else:
-        loggin.info(f'CREATING STACK {stack_name}')
+        logging.info(f'CREATING STACK {stack_name}')
         create_stack(stack_name,template_body)
 
 if __name__ == '__main__':
