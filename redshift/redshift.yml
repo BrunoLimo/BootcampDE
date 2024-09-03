@@ -15,7 +15,7 @@ Resources:
       DBName: production
       Encrypted: true
       MasterUsername: brunolimo125
-      MasterUserPassword: 31092885
+      MasterUserPassword: 31092885Bb.
       NodeType: dc2.large
       NumberOfNodes: 1
       PubliclyAccessible: true
