@@ -10,7 +10,7 @@ def create_stack(stack_name,template_body, **kwargs): #criando o stack no cloudf
     cloudformation_client.create_stack(
         StackName=stack_name,
         TemplateBody=template_body,
-        Capacibilities=['CAPACIBILITY_IAM','CAPACIBILITY_NAMED_IAM'],
+        Capabilities=['CAPABILITY_IAM','CAPABILITY_NAMED_IAM'],
         TimeoutInMinutes=30,
         OnFailure='ROLLBACK'
     )
@@ -26,7 +26,7 @@ def update_stack(stack_name, template_body, **kwargs): #fazendo o update do stac
     try:
         cloudformation_client.update_stack(
             StackName=stack_name,
-            Capacibilities=['CAPACILIBITIES_IAM','CAPACIBILITIES_NAMED_IAM'],
+            Capabilities=['CAPALIBITIES_IAM','CAPABILITIES_NAMED_IAM'],
             TemplateBody=template_body
         )
     
