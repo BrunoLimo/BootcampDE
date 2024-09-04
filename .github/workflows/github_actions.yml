@@ -6,9 +6,23 @@ on:
             - github_actions
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-        
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run:
+        pip install -r tests/requirements.txt
+    - name: Run tests
+      run: python -m pytest
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -23,5 +37,5 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-      run:
-        python aula2/github_actions/deploy.py
+      run: |
+        python 1.aula2/github_actions/deploy.py
